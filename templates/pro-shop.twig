@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="hero" style="background: url('{{ post.thumbnail.src }}') no-repeat top center">
+        <h1 style="color: {{ post.site_title_color }}">{{post.title}}</h1>
+    </div>
+    <div class="wrapper">
+        <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+            <section class="article-content head">
+                <h2>{{ post.hero_heading }} <span></span></h2>
+                <div class="article-body">
+                    <div class="sub-heading">
+                        {{ post.hero_subheading }}
+                    </div>
+                </div>
+            </section>
+            <div class="tournaments">
+                {#{% if post.tournaments %}#}
+                    {% for item in post.meta('tournaments') %}
+                        <div class="item">
+                            <div class="inner">
+                                <div class="image">
+                                    <img src="{{ Image(item.image).src | resize(393, 293) }}" alt="">
+                                </div>
+                                <h3>{{ item.title }}</h3>
+                                <p>{{ item.description }}</p>
+                                <div class="links">{{ item.link }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {#{% endif %}#}
+            </div>
+            {% include "block/block-logic.twig" %}
+        </article>
+    </div><!-- /content-wrapper -->
+{% endblock %}

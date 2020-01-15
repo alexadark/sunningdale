@@ -1,0 +1,11 @@
+{% block contentBlock %}
+    <div class="two-column-block">
+        <div>
+            {{ block.text_columns }}
+        </div>
+        {% if block.image_column %}
+            {% set img = Image(block.image_column).src %}
+            <div><img src="{{ img }}" alt=""></div>
+        {% endif %}
+    </div>
+{% endblock %}

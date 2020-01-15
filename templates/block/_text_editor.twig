@@ -1,0 +1,7 @@
+{% if block.max_width %}
+    <section class="text-editor" style="max-width: {{ block.max_width }}px">
+{% else %}
+    <section class="text-editor">
+{% endif %}
+    {{ block.text_editor | wpautop }}
+    </section>

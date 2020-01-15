@@ -1,0 +1,329 @@
+.two-column-block{
+  margin:20px 0;
+  max-width: $max-width;
+  @include min-screen($m){
+    display: flex;
+    justify-content: space-between;
+    > div{
+      flex: 0 48%;
+    }
+  }
+
+}
+.testimonial {
+  position: relative;
+  margin:20px 0;
+  @include min-screen($m){
+    margin: 20px 30px;
+  }
+  .content {
+    color: $blue;
+    padding:10px 60px;
+    @include max-screen($s){
+      padding:10px 40px;
+    }
+    .inner-content{
+      .picture{
+        width:164px;
+        float: left;
+        margin-right: 40px;
+        @include max-screen($s){
+          float: none;
+          margin: 0 auto 20px;
+        }
+        img{
+          border-radius: 50%;
+          width:100%;
+          display: block;
+          height:auto;
+        }
+      }
+      .author{
+        font-weight: 500;
+        margin-top: 10px;
+      }
+    }
+  }
+  .slick-prev{
+    position: absolute;
+    top:30%;
+    z-index:10;
+  }
+  .slick-next{
+    z-index:10;
+    position: absolute;
+    top:30%;
+    right:0;
+  }
+}
+
+.clubhouse-contact {
+  @include min-screen($m){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  margin-bottom: 50px;
+  .contact-item{
+    @include min-screen($m) {
+      flex: 0 49%;
+    }
+    background-color: #f7f7f7;
+    box-sizing:border-box;
+    margin: 10px 0;
+    padding: 30px;
+    .name{
+      font-weight:500;
+      color: $dark-blue;
+      .member-area-page &{
+        color: $brown;
+      }
+    }
+    .email a{
+      text-transform: uppercase;
+      color: $dark-blue;
+      .member-area-page &{
+        color: $brown;
+      }
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.career {
+  @include min-screen($m){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  margin-bottom: 50px;
+  .career-item {
+      @include min-screen($m) {
+        flex: 0 49%;
+      }
+    .item{
+      background-color: #f7f7f7;
+      box-sizing:border-box;
+      margin: 20px 0;
+      padding: 35px;
+      .name{
+        font-weight:500;
+        color: $dark-blue;
+      }
+      .link a{
+        text-transform: uppercase;
+        color: $blue;
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+    }
+    .inner{
+      .by, .or{
+        font-weight:500;
+      }
+      .email{
+        margin-bottom: 18px;
+        a {
+          color: $white;
+        }
+      }
+
+    }
+    &.right{
+      h3{
+        color: $white;
+        margin-top: 0;
+      }
+      color: $white;
+      .inner{
+        padding: 35px;
+        background: $blue;
+        margin-top: 20px;
+      }
+    }
+
+  }
+}
+.career-text{
+  h4{
+    margin:0;
+    font-weight: 400;
+  }
+  margin-bottom: 50px;
+}
+.contact{
+  max-width:800px;
+  margin:0 auto;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .content{
+    @include min-screen($s){
+      flex: 0 48%;
+    }
+    font-size: 1.2rem;
+    b{
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: $dark-blue;
+      .member-area-page &{
+        color: $brown;
+      }
+    }
+    .upper-link{
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+  }
+  .map{
+    iframe{
+      width:100%;
+    }
+  }
+}
+.reservation-button{
+  background: $dark-blue;
+  color: white!important;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  margin:30px 0;
+  width: 216px;
+  display: block;
+  text-align: center;
+  border:1px solid transparent;
+  border-radius: 5px;
+  opacity:1;
+  &:hover{
+    background-color: $dark-blue;
+    color: $white;
+    border:1px solid $dark-blue;
+    opacity:.9;
+  }
+}
+.video-editor{
+  text-align: center;
+  margin: 50px 0;
+  overflow: hidden;
+  iframe{
+    @include max-screen($s){
+      width:100%;
+    }
+  }
+}
+.text-editor{
+  margin:0 auto;
+}
+.scroll-table{
+  overflow-x: auto;
+}
+.custom-table{
+  margin:30px auto;
+  min-width: $m;
+  font-size: 1.3rem;
+  thead th{
+    background-color: $dark-blue;
+    .member-area-page &{
+      background-color: $brown;
+    }
+    color: white;
+    padding: 15px 40px;
+    @include max-screen($m){
+      padding:10px;
+    }
+    text-transform: uppercase;
+    span{
+      display: block;
+      font-weight:300;
+    }
+  }
+  tbody{
+    tr{
+      background-color: #f4f4f4;
+      &:nth-child(even){
+        background-color: #e4e6ea;
+        .member-area-page &{
+          background-color: #dacfc9;
+        }
+      }
+      td{
+        padding:15px 40px;
+        @include max-screen($m){
+          padding:10px;
+        }
+        border-right: 1px solid $dark-blue;
+        text-align: center;
+        &:last-child{
+          border:none;
+        }
+        text-align: center;
+        >div {
+          display: flex;
+          justify-content: space-between;
+          span:last-child{
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+  &.result{
+    width:100%;
+    max-width: 900px;
+    margin:30px auto;
+    tr td{
+      border-right: none;
+      &:first-child{
+        border-right:1px solid $dark-blue;
+      }
+      a{
+        white-space: nowrap;
+        text-transform: uppercase;
+        font-weight:500;
+        font-size: 1.2rem;
+        color: $brown;
+      }
+    }
+  }
+}
+.head.course{
+  padding:15px 0 10px;
+  background-color: $light-white;
+  h2{
+    margin-top: 20px;
+  }
+}
+.holes{
+  background-color: $light-white;
+  padding-bottom: 20px;
+  .wrapper{
+    margin:0 auto;
+    max-width:1000px;
+    text-align: center;
+  }
+  .image{
+    display: inline-block;
+    margin:2px;
+    img{
+      width:100%;
+    }
+    .index{
+      margin: 10px 0;
+      font-weight: 500;
+    }
+  }
+}
+.image-title{
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.image-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #aaa;
+}
+.testimonial{
+  max-width: 900px;
+  margin:50px auto 30px;
+}

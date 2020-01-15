@@ -1,0 +1,40 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="hero" style="background: url('{{ post.thumbnail.src }}') no-repeat center center">
+        {% if post.thumbnail.src %}
+            <h1 style="color: {{ post.site_title_color }}">{{post.title}}</h1>
+        {% else %}
+            <h1 style="color: black">{{post.title}}</h1>
+        {% endif %}
+    </div>
+    <div class="wrapper">
+        <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+            {% include "block/block-logic.twig" %}
+            <div class="result scroll-table">
+                <table class="custom-table result">
+                    <thead>
+                        <tr>
+                            <th class="nowrap">Date played</th>
+                            <th colspan="3" style="text-align: left">Competition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in results %}
+                        <tr>
+                            <td>{{ item.date_played }}</td>
+                            <td style="text-align: left">{{ item.title }}</td>
+                            <td><a href="{{ item.scores_link }}">View scores ></a></td>
+                            <td>{% if item.results_link %} <a href="{{ item.results_link }}">View results ></a> {% endif %}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                {% set posts = results %}
+                {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+            </div>
+
+        </article>
+    </div><!-- /content-wrapper -->
+{% endblock %}

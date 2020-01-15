@@ -1,0 +1,25 @@
+<div class="scroll-table">
+    <table class="custom-table">
+        {% set table = block.content_table %}
+        {% if table.header %}
+            <thead>
+            <tr>
+                {% for item in table.header %}
+                    <th>{{ item.c }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for tr in table.body %}
+                <tr>
+                    {% for item in tr %}
+                        <td>
+                            {{ item.c }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        {% endif %}
+    </table>
+</div>

@@ -1,0 +1,42 @@
+</div>
+<section class="article-content head course">
+    <div class="wrapper">
+        <h2>{{ block.bh_title }} <span></span></h2>
+        <div class="sub-heading">
+            {{ block.bh_subtitle }}
+        </div>
+    </div>
+</section>
+<div class="holes">
+    <div class="wrapper">
+        {% set num = 1 %}
+        {% set prefix = 'th' %}
+        {% for item in course %}
+            {% for subitem in item.get_field('holes') %}
+                {#<div class="item">#}
+                {% for img in subitem.hole_pictures %}
+                    <div class="image">
+                        <a data-fancybox="gallery" data-caption="{{ subitem.hole_title }}" href="{{ function ('wp_get_attachment_url', img) }}">
+                            {{ function ('wp_get_attachment_image', img, 'thumbnail') }}
+                            <figcaption style="display: none;">
+                                <div class="image-title">{{ subitem.hole_title }}</div>
+                                <div class="image-desc">{{ subitem.hole_description }}</div>
+                            </figcaption>
+                        </a>
+
+                        <div class="index">
+                            {% if num<4 %}
+                                {{ num }}{{ number[num] }} hole
+                            {% else %}
+                                {{ num }}{{ prefix }} hole
+                            {% endif %}
+                        </div>
+                        {% set num = num + 1 %}
+                    </div>
+                {% endfor %}
+                {#</div>#}
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+<div class="wrapper">

@@ -1,0 +1,12 @@
+<div class="faq">
+    <ul>
+        {% for item in post.get_field('faq') %}
+            <li>
+                <input type="checkbox" checked>
+                <i></i>
+                <h2>{{ item.faq_title }}</h2>
+                <div class="content">{{ item.faq_content }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

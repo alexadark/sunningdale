@@ -1,0 +1,20 @@
+<section class="testimonial">
+    {% if block.testimonial_activation == 'true' %}
+        {% for item in options.testimonials %}
+            <div class="content">
+                <div class="inner-content">
+                    {% set img = function('get_the_post_thumbnail_url', item.ID, 'medium') %}
+                    {% if img %}
+                        <div class="picture"><img src="{{ img | resize(240, 240)}}" alt=""></div>
+                    {% endif %}
+                    <div class="text">
+                        {{ item.post_content }}
+                    </div>
+                    <div class="author">
+                       - {{ item.testimonial_author }}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>

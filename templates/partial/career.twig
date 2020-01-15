@@ -1,0 +1,20 @@
+<div class="career">
+    <div class="career-item">
+        {% for item in post.get_field('vacancies') %}
+            <div class="item">
+                <div class="name">{{ item.vacancies_name }}</div>
+                <div class="desc">{{ item.vacancies_description }}</div>
+                <div class="link"><a href="{{ item.vacancies_link }}">View role > </a></div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="career-item right">
+        <div class="inner">
+            {{ post.careers_right_block }}
+        </div>
+    </div>
+</div>
+<div class="career-text">
+    {{ post.bottom_paragraph | wpautop  }}
+
+</div>

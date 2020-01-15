@@ -1,0 +1,10 @@
+<div class="clubhouse-contact">
+    {% for item in post.get_field('clubhouse_contact') %}
+        <div class="contact-item">
+            <div class="name">{{ item.contact_name }}</div>
+            <div class="fn">{{ item.contact_function }}</div>
+            <div class="phone"><a href="tel:{{ item.contact_phone }}">{{ item.contact_phone }}</a></div>
+            <div class="email"><a href="mailto:{{ item.contact_email }}">Email me ></a></div>
+        </div>
+    {% endfor %}
+</div>

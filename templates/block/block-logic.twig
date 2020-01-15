@@ -1,0 +1,19 @@
+{% for block in post.get_field('content_blocks') %}
+    {% set block_class = block.acf_fc_layout  %}
+    {% if block_class == 'block_two_columns' %}
+        {% include 'block/_two-column.twig' %}
+    {% elseif block_class == 'block_headings' %}
+        {% include 'block/_headings.twig' %}
+    {% elseif block_class == 'block_testimonials' %}
+        {% include 'block/_testimonials.twig' %}
+    {% elseif block_class == 'block_text_editor' %}
+        {% include 'block/_text_editor.twig' %}
+    {% elseif block_class == 'block_video' %}
+        {% include 'block/_video.twig' %}
+    {% elseif block_class == 'block_table' %}
+        {% include 'block/_table.twig' %}
+    {% elseif block_class == 'block_hole_details' %}
+        {% include 'block/_hole.twig' %}
+    {% endif %}
+
+{% endfor %}

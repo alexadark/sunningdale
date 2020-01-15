@@ -1,0 +1,37 @@
+.content-principal{
+  min-height: calc(100vh - 64px);
+}
+.home-page{
+  .content-wrapper{
+    padding-bottom: 0;
+  }
+  .content-principal{
+    min-height:inherit;
+  }
+}
+footer{
+  .home-page &{
+    position: fixed;
+    bottom:0;
+  }
+  margin-top: 0;
+  width:100%;
+  background-color: $light-white;
+  padding:20px 0;
+  text-align: center;
+  ul{
+    margin:0 auto;
+    padding:0;
+    max-width:800px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    @include max-screen($s){
+      flex-direction:column;
+      li{
+        padding:2px 0;
+      }
+    }
+  }
+}

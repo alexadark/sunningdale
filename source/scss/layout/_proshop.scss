@@ -1,0 +1,113 @@
+.hero{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //background-size: contain!important;
+  background-size: cover!important;
+  min-height:200px;
+  @include min-screen($s){
+    min-height:350px;
+  }
+  //margin-bottom: 50px;
+  h1{
+    color: $white;
+    text-align: center;
+    line-height: 4rem;
+  }
+}
+.article-content{
+  @include max-screen($s){
+    margin:0 10px;
+  }
+  &.head{
+    text-align: center;
+    margin:0 auto;
+    h2{
+      font-weight: 500;
+      position: relative;
+      margin-bottom: 25px;
+      margin-top: 50px;
+      line-height: 3rem;
+      span{
+        display: block;
+        width:94px;
+        margin:0 auto;
+        background-color: $blue;
+        .member-area-page &{
+          background-color: $brown;
+        }
+        height:3px;
+        margin-top: 19px;
+      }
+    }
+  }
+  .sub-heading{
+    strong{
+      display: block;
+      font-size: 1.8rem;
+      color: $dark-blue;
+      a{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.tournaments {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 20px;
+  @include max-screen($s){
+    display: block;
+  }
+  .item {
+    flex-grow: 1;
+    flex: 1 1 30%;
+    max-width:30%;
+    @include max-screen($m){
+      flex: 1 1 45%;
+      max-width:45%;
+    }
+    @include max-screen($s){
+      max-width: none;
+    }
+    .inner{
+      margin:10px 15px;
+      p{
+        font-size: 1.4rem;
+      }
+      .links p{
+        margin: 5px 0;
+      }
+      h3{
+        text-align: center;
+        font-weight: 400;
+      }
+      a.link{
+
+      }
+      .links {
+        display: flex;
+        justify-content: space-between;
+        a {
+          font-weight: 400;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+          &:after {
+            content: '>';
+            font-size: 2rem;
+            line-height: 1rem;
+            position: relative;
+            top: 3px;
+            left:3px;
+          }
+        }
+      }
+    }
+  }
+}
+.strong-paragraph{
+  font-size: 17px;
+}

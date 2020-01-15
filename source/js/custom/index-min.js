@@ -1,0 +1,1 @@
+!function(l){l(".blog .tease-post:nth-child(3),.blog .tease-post:nth-child(4), .blog .tease-post:nth-child(5)").addClass("tease-post--small"),l(".tease-post--small").wrapAll("<div class='small-posts-wrapper'/>"),l(".mobile-menu-link").click(function(){return l(".nav-main").slideToggle(),!1})}(jQuery);

@@ -1,0 +1,12 @@
+{% block contentBlock %}
+    {% if block.max_width %}
+        <section class="article-content head" style="max-width: {{ block.max_width }}px">
+    {% else %}
+        <section class="article-content head">
+    {% endif %}
+        <h2>{{ block.heading }} <span></span></h2>
+        <div class="sub-heading">
+                {{ block.sub_heading }}
+        </div>
+    </section>
+{% endblock %}

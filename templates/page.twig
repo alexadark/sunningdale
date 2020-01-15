@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="hero" style="background: url('{{ post.thumbnail.src }}') no-repeat center center">
+		{% if post.thumbnail.src %}
+			<h1 style="color: {{ post.site_title_color }}">{{post.title}}</h1>
+		{% else %}
+			<h1 style="color: black">{{post.title}}</h1>
+		{% endif %}
+	</div>
+	<div class="wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			{{ post.post_content | wpautop }}
+			{% include "block/block-logic.twig" %}
+			{% if post.get_field('clubhouse_contact') %}
+				{% include "partial/clubhouse-contact.twig" %}
+			{% elseif post.get_field('vacancies') %}
+				{% include "partial/career.twig" %}
+			{% elseif post.get_field('faq') %}
+				{% include "partial/faq.twig" %}
+			{% elseif post.contact_content %}
+				{% include "partial/contact-us.twig" %}
+			{% endif %}
+
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}
